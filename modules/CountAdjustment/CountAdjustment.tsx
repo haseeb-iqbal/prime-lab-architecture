@@ -8,14 +8,13 @@ const CountAdjustment = () => {
   const counter = useSelector((state) => state.value);
   const dispatch = useDispatch();
 
-  const theFunction = () => {
+  const dispatchFunction = () => {
     dispatch(counterIncrementAction());
-    console.log(counter);
   };
   return (
     <StyledDiv>
       <p>{counter}</p>
-      <IncrementButton onClickEvent={() => dispatch(theFunction)} />
+      <IncrementButton onClickEvent={() => dispatch(dispatchFunction)} />
     </StyledDiv>
   );
 };
