@@ -1,16 +1,23 @@
 import React from "react";
 import { IncrementButton } from "../../components/core/IncrementButton/IncrementButton";
 import StyledDiv from "./CountAdjustment.styles";
-import store from "../../store/increment/increment.slice";
 import counterIncrementAction from "../../store/increment/increment.actions";
-export const CountAdjustment = () => {
-  function theFunction() {
-    store.dispatch(counterIncrementAction);
-    console.log(store.getState());
-  }
+import { useSelector, useDispatch } from "react-redux";
+
+const CountAdjustment = () => {
+  const counter = useSelector((state) => state.value);
+  const dispatch = useDispatch();
+
+  const theFunction = () => {
+    dispatch(counterIncrementAction());
+    console.log(counter);
+  };
   return (
     <StyledDiv>
-      <IncrementButton onClickEvent={() => theFunction()} />
+      <p>{counter}</p>
+      <IncrementButton onClickEvent={() => dispatch(theFunction)} />
     </StyledDiv>
   );
 };
+
+export default CountAdjustment;

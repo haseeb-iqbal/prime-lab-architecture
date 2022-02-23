@@ -1,7 +1,6 @@
 const initialState = { value: 0 };
-import { configureStore } from "@reduxjs/toolkit";
 
-function counterReducer(state = initialState, action) {
+const counterReducer = (state = initialState, action) => {
   // Check to see if the reducer cares about this action
   console.log("action");
   if (action.type === "counter/increment") {
@@ -13,8 +12,7 @@ function counterReducer(state = initialState, action) {
   }
   // otherwise return the existing state unchanged
   return state;
-}
-const store = configureStore({ reducer: counterReducer });
+};
 
-export default store;
+export default counterReducer;
 // {value: 0}

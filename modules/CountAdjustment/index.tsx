@@ -1,3 +1,3 @@
-import { CountAdjustment } from "./CountAdjustment";
+import CountAdjustment from "./CountAdjustment";
 
 export default CountAdjustment;

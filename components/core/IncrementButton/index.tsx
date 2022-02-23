@@ -1,3 +1,3 @@
 import { IncrementButton } from "./IncrementButton";
 
-export IncrementButton
+export default IncrementButton;
