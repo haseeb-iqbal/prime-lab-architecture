@@ -5,12 +5,14 @@ import { StyledButton, StyledDiv } from "./index.styles";
 import Description from "../../components/Description";
 import CountAdjustment from "../../modules/CountAdjustment";
 import { API_KEY } from "../../constants/app.constants";
+import DialogButton from "../../modules/DialogButton";
 const Dashboard: NextPage = () => {
   const router = useRouter();
   return (
     <StyledDiv>
       <Description />
       <CountAdjustment />
+      <DialogButton />
       <b>Your API key is: {API_KEY}</b>
       <StyledButton onClick={() => router.push("/submit")}>
         Go to next page/submit
